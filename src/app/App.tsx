@@ -3,14 +3,14 @@ import ReactDOM from "react-dom";
 import { Socket } from "./components/Socket";
 import { Nodule } from "./components/Nodule";
 
-interface Stage {
+interface Patch {
   nodules: [];
 }
 
 const App = () => {
   const nodules: Nodule.Model[] = [
     {
-      connectors: [
+      sockets: [
         {
           type: Socket.Type.Input,
         },
@@ -20,7 +20,7 @@ const App = () => {
       ],
     },
     {
-      connectors: [{ type: Socket.Type.Output }],
+      sockets: [{ type: Socket.Type.Output }],
     },
   ];
 
@@ -28,7 +28,7 @@ const App = () => {
     <>
       {nodules.map((nodule, index) => {
         return (
-          <Nodule.Component key={`connector-${index}`} connectors={nodule.connectors}>
+          <Nodule.Component key={`connector-${index}`} {...nodule}>
             XXX
           </Nodule.Component>
         );

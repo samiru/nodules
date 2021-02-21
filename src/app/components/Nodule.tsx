@@ -6,22 +6,22 @@ import { Socket } from "./Socket";
 
 export namespace Nodule {
   export interface Model {
-    connectors: Socket.Model[];
+    sockets: Socket.Model[];
   }
 
   export type Props = Model & DefaultProps;
 
   export const Component = (props: Props) => {
-    const { connectors } = props;
+    const { sockets } = props;
 
     return (
       <Draggable>
         <div>
           <div>{props.children}</div>
           <div>
-            {connectors.map((connector, index) => {
+            {sockets.map((socket, index) => {
               return (
-                <Socket.Component key={`connector-${index}`} type={connector.type} />
+                <Socket.Component key={`connector-${index}`} {...socket} />
               );
             })}
           </div>
