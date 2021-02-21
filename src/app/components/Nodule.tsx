@@ -2,11 +2,11 @@ import React, { ReactChild, ReactChildren } from "react";
 import ReactDOM from "react-dom";
 import Draggable from "react-draggable";
 import { DefaultProps } from "../common/Util";
-import { Connector } from "./Connector";
+import { Socket } from "./Socket";
 
 export namespace Nodule {
   export interface Model {
-    connectors: Connector.Model[];
+    connectors: Socket.Model[];
   }
 
   export type Props = Model & DefaultProps;
@@ -21,7 +21,7 @@ export namespace Nodule {
           <div>
             {connectors.map((connector, index) => {
               return (
-                <Connector.Component key={`connector-${index}`} type={connector.type} />
+                <Socket.Component key={`connector-${index}`} type={connector.type} />
               );
             })}
           </div>

@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import Draggable from "react-draggable";
 import { DefaultProps } from "../common/Util";
 
-export namespace Connector {
+export namespace Socket {
   export enum Type {
     Input = "Input",
     Output = "Output",

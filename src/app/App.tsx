@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Connector } from "./components/Connector";
+import { Socket } from "./components/Socket";
 import { Nodule } from "./components/Nodule";
 
 interface Stage {
@@ -12,15 +12,15 @@ const App = () => {
     {
       connectors: [
         {
-          type: Connector.Type.Input,
+          type: Socket.Type.Input,
         },
         {
-          type: Connector.Type.Input,
+          type: Socket.Type.Input,
         },
       ],
     },
     {
-      connectors: [{ type: Connector.Type.Output }],
+      connectors: [{ type: Socket.Type.Output }],
     },
   ];
 
