@@ -1,26 +1,23 @@
 import React from "react";
 import { DefaultProps } from "../common/Util";
+import { Socket } from "./Socket";
 
-export namespace Socket {
-  export enum Type {
-    Input = "Input",
-    Output = "Output",
-  };
-
+export namespace Connector {
   export interface Model {
-    type: Type
+    socketA: Socket.Model,
+    socketB: Socket.Model,
   }
 
   export type Props = Model & DefaultProps;
 
   export const Component = (props: Props) => {
-    const { type } = props;
+    const { socketA, socketB } = props;
 
-    console.log({ type });
+    console.log({ socketA, socketB });
 
     return (
       <div>
-        ({type})
+        [{ socketA.type }, { socketB.type }]
       </div>
     );
   };

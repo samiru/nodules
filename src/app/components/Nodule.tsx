@@ -1,5 +1,4 @@
-import React, { ReactChild, ReactChildren } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
 import Draggable from "react-draggable";
 import { DefaultProps } from "../common/Util";
 import { Socket } from "./Socket";
