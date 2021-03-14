@@ -1,6 +1,6 @@
-import { ReactChild, ReactChildren } from 'react';
+import { Coordinate } from "./types";
 
-export interface DefaultProps {
-  key: string;
-  children?: ReactChild | ReactChildren;
+export const usePosition = (element: HTMLElement): Coordinate => {
+  const { left: x, top: y } = element.getBoundingClientRect();
+  return { x, y };
 }

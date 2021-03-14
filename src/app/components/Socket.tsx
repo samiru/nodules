@@ -1,5 +1,5 @@
-import React from "react";
-import { DefaultProps } from "../common/Util";
+import React, { useRef } from "react";
+import { DefaultProps, InnerRef } from "../common/types";
 
 export namespace Socket {
   export enum Type {
@@ -7,19 +7,19 @@ export namespace Socket {
     Output = "Output",
   };
 
-  export interface Model {
-    type: Type
-  }
+  export type Model = {
+    type: Type;
+  } & InnerRef;
 
   export type Props = Model & DefaultProps;
 
   export const Component = (props: Props) => {
-    const { type } = props;
+    const { type, innerRef } = props;
 
-    console.log({ type });
+    console.log({ props });
 
     return (
-      <div>
+      <div ref={innerRef}>
         ({type})
       </div>
     );
